@@ -1,6 +1,6 @@
 import cvData from './data/cv-data.js';
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(cvData);
+  //console.log(cvData);
   renderCV(cvData);
 });
 
