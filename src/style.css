@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: 'Calibri', sans-serif; */
+  background-color: #fff;
+  color: #000;
+  font-size: 11pt;
+  line-height: 1.2;
+  font-weight: 500; /* Hace el texto normal ligeramente más negrita */
+}
+  
+.container {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 20mm auto;
+  margin-top: 5mm;
+  padding-bottom: 1mm;
+  padding: 5mm;
+  background: white;
+  border: 1px solid #0e0d0d;
+}
+
+header {
+  text-align: center;
+  padding-bottom: 5mm;
+}
+
+header h1 {
+  font-size: 24pt;
+  font-weight: 800; /* Más negrita para el título principal */
+  color: #000;
+}
+
+header .contact {
+  font-size: 11pt;
+  color: #000;
+}
+
+header .contact a {
+  color: #000;
+  padding: 3mm;
+  text-decoration: none;
+}
+
+header .contact a:hover {
+  text-decoration: underline;
+}
+
+header .contact i {
+  margin-right: 4px;
+  font-size: 10pt;
+  margin-left: 3mm;
+  margin-right: 3mm;
+}
+
+section {
+  margin-bottom: 3mm;
+}
+
+section h2 {
+  font-size: 14pt;
+  font-weight: 800; /* Más negrita para los títulos de sección */
+  color: #000;
+  margin-top: 1mm;
+  margin-bottom: 0.5mm;
+  display: inline-block;
+}
+
+.linea{
+  text-align: center;
+  border-bottom: 2pt solid #121111;
+  margin-bottom: 1mm;
+}
+
+.education .item,
+.awards .item {
+  margin-bottom: 2mm;
+}
+
+.education .item h3,
+.awards .item h3 {
+  font-size: 12pt;
+  font-weight: 800; /* Más negrita para los títulos de item */
+  color: #000;
+  /* margin-bottom: 1mm; */
+}
+
+.education .item .details,
+.awards .item .details {
+  color: #555;
+}
+
+.education .item .details {
+  font-size: 11pt;
+}
+
+.awards .item .details {
+  font-size: 12pt;
+  font-weight: normal; /* Asegura que la ubicación no esté en negrita */
+}
+
+.awards .item .award-entry-line {
+  display: flex;
+  justify-content: space-between; /* Alinea el título a la izquierda y la fecha a la derecha */
+  align-items: baseline; /* Alinea los elementos por su línea base de texto */
+  margin-bottom: 2mm; /* Espaciado entre entradas de premios */
+}
+
+
+.skills {
+  font-size: 11pt;
+}
+
+.skills strong {
+  display: inline; /* Ensures skill categories appear on the same line as their values */
+}
+
+.experience .job {
+  margin-bottom: 5mm;
+  position: relative;
+  padding-left: 5mm;
+}
+
+.experience .job::before {
+  background: #000;
+  border-radius: 50%;
+}
+
+.experience .job h3 {
+  font-size: 12pt;
+  font-weight: 800; /* Más negrita para el título de trabajo */
+  color: #000;
+  /* margin-bottom: 1mm; */
+}
+
+.experience .job .company {
+  font-weight: 800; /* Más negrita para el nombre de la compañía */
+  color: #000;
+  display: inline;
+}
+
+.experience .job .dates {
+  font-size: 12pt;
+  color: #000000;
+  float: right;
+  margin-top: -4mm;
+  margin-left: 3mm;
+  margin-bottom: 2mm;
+}
+
+.education .education-dates {
+  font-size: 12pt;
+  color: #000000;
+  float: right;
+  margin-top: 0;
+  margin-left: 3mm;
+  text-align: right;
+}
+
+/* Asegurar que los elementos <strong> sean más negritos */
+.education .education-dates strong,
+.experience .job .dates strong,
+.awards .item .details strong,
+.skills strong {
+  font-weight: 800;
+}
+
+.experience .job::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.experience .job ul {
+  margin-top: 1mm;
+  padding-left: 6mm;
+  list-style: none;
+}
+
+.experience .job ul li {
+  position: relative;
+  margin-bottom: 1mm;
+  padding-left: 3mm;
+}
+
+.experience .job ul li::before {
+  content: "•";
+  color: #000;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.certifications ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 11pt;
+}
+
+.certifications ul li {
+  margin-bottom: 1.5mm;
+  position: relative;
+  padding-left: 5mm;
+}
+
+.certifications ul li::before {
+  content: "✓";
+  color: #000;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+
+/* Responsive para impresión */
+@media print {
+  body, html { /* Aseguramos que tanto body como html no tengan márgenes */
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+    line-height: 1.15;
+    font-weight: 500; /* Hace el texto normal ligeramente más negrita */
+  }
+  .container {
+    width: 210mm; /* Ancho A4 */
+    /* Eliminamos min-height para que el contenedor se ajuste al contenido */
+    margin: 0; /* Eliminar márgenes automáticos */
+    padding: 3.5mm; /* Ajustado para 70px */
+    border: none;
+  }
+  /* Ajustar tamaños de fuente específicos para impresión si es necesario */
+  header {
+    padding-bottom: 3mm; /* Ajustado para 70px */
+  }
+  /* Aumentar el peso de las fuentes que ya son negritas */
+  header h1 {
+    font-size: 19pt;
+    font-weight: 800; /* Más negrita para el título principal */
+  }
+  header .contact {
+    font-size: 9.5pt;
+  }
+  header .contact i {
+    font-size: 9.5pt;
+    margin-left: 1mm;
+    margin-right: 1mm;
+  }
+  section {
+    margin-bottom: 2mm; /* Ajustado para 70px */
+  }
+  /* Aumentar el peso de las fuentes que ya son negritas */
+  section h2 {
+    font-size: 12.5pt;
+    font-weight: 800; /* Más negrita para los títulos de sección */
+    margin-top: 0.5mm; /* Ajustar margen superior */
+    margin-bottom: 0.6mm; /* Ajustado para 70px */
+  }
+  .linea {
+    margin-bottom: 1mm; /* Ajustado para 70px */
+  }
+  .education .item,
+  .awards .item {
+    margin-bottom: 1.5mm; /* Ajustado para 70px */
+  }
+  /* Aumentar el peso de las fuentes que ya son negritas */
+  .education .item h3,
+  .awards .item h3 {
+    font-size: 11.3pt;
+    font-weight: 800; /* Más negrita para los títulos de item */
+  }
+  .education .education-dates,
+  .experience .job .dates,
+  .awards .item .details {
+    font-size: 9.5pt; /* Unificar y reducir tamaño de fechas/lugares */
+  }
+  /* Asegurar que los elementos <strong> dentro de .education-dates, .job .dates y .awards .item .details sean más negritos */
+  .education .education-dates strong,
+  .experience .job .dates strong,
+  .awards .item .details strong {
+    font-weight: 800;
+  }
+  .experience .job {
+    margin-bottom: 3mm; /* Ajustado para 70px */
+    padding-left: 3mm; /* Reducir padding izquierdo */
+  }
+  /* Aumentar el peso de las fuentes que ya son negritas */
+  .experience .job h3 {
+    font-size: 11.3pt;
+    font-weight: 800; /* Más negrita para el título de trabajo */
+  }
+  /* Aumentar el peso de las fuentes que ya son negritas */
+  .experience .job .company {
+    font-size: 10pt;
+    font-weight: 800; /* Más negrita para el nombre de la compañía */
+  }
+  .experience .job ul {
+    margin-top: 0.75mm; /* Ajustado para 70px */
+    padding-left: 5mm; /* Ajustar padding de la lista */
+  }
+  .experience .job ul li {
+    margin-bottom: 0.75mm; /* Ajustado para 70px */
+    padding-left: 2.5mm; /* Ajustar padding de lista item */
+  }
+  .skills, .certifications ul li {
+    font-size: 9.8pt;
+  }
+  .certifications ul li {
+    margin-bottom: 1.25mm; /* Ajustado para 70px */
+    padding-left: 4mm; /* Ajustar padding de lista item */
+  }
+  .awards .item .award-entry-line {
+    margin-bottom: 1.2mm; /* Ligeramente ajustado para 70px */
+  }
+}
